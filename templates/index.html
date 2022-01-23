@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+{% load static %}
+
+<head>
+  <meta charset="utf-8">
+  <title>Home page</title>
+
+  <link rel="stylesheet" type='text/css' href="{% static '/css/style.css'%}">
+</head>
+
+<body>
+  <h1 class="main-heading">Breast Cancer Prediction</h1>
+  <div class="container">
+    <div class="row">
+      <form class="form" action="{% url 'result' %}">
+        <p style="text-align: center;color: white;font-weight: bold;padding: .5rem;">{% csrf_token %}</p>
+
+        <ul style="padding-left: 5rem;" class="ul">
+          <li>
+            <p>Texture Mean</p>
+            <input type="text" name="tm">
+          </li>
+          <li>
+            <p>Area Mean</p>
+            <input type="text" name="am">
+          </li>
+
+
+          <li>
+            <p>Smoothness Mean</p>
+            <input type="text" name="sm">
+          </li>
+          <li>
+            <p>Fractal Dimension Mean</p>
+            <input type="text" name="fdm">
+          </li>
+
+
+
+        </ul>
+        <ul class="ul">
+          <li>
+            <p>Concavity Mean</p>
+            <input type="text" name="cm">
+          </li>
+          <li>
+            <p>Symmetry Mean</p>
+            <input type="text" name="sym">
+          </li>
+
+          <li>
+            <p>Texture SE:</p>
+            <input type="text" name="tse">
+          </li>
+
+        </ul>
+
+        <ul class="ul">
+          <li>
+            <p>Symmetry SE</p>
+            <input type="text" name="syse">
+          </li>
+          <li>
+            <p>Fractal Dimension SE</p>
+            <input type="text" name="fdse">
+          </li>
+          <li>
+            <p>Smoothness Worst</p>
+            <input type="text" name="sw">
+          </li>
+
+
+
+        </ul>
+        <ul class="ul">
+          <li>
+            <p>Symmetry Worst</p>
+            <input type="text" name="syw">
+          </li>
+          <li>
+            <p>Concavity Worst</p>
+            <input type="text" name="cw">
+          </li>
+          <li>
+            <p>Smoothness SE</p>
+            <input type="text" name="sse">
+          </li>
+        </ul>
+        <ul class="ul">
+          <li>
+            <p>Concavity SE</p>
+            <input type="text" name="cse">
+          </li>
+          <li>
+            <p>Fractal Dimension Worst</p>
+            <input type="text" name="fdw">
+          </li>
+          <li>
+            <p>Area SE</p>
+            <input type="text" name="ase">
+          </li>
+        </ul>
+        <ul class="last">
+          <li>
+            <input class="input" type="submit" value='Get Predictions'>
+
+          </li>
+        </ul>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
